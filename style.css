@@ -1,0 +1,409 @@
+:root {
+	--background-default: #f8fafd;
+    --background-contrast: #fff;
+    --search-bar: #f1f3f4;
+    --title: #5f6368;
+    --text-primary: #444746;
+    --divisor: #c7c7c7;
+    --hover: rgba(60,64,67,.08);
+    --input: #747775;
+    --button: #c2e7ff;
+    --red: #D50000;
+    --pink: #C51162;
+    --purple: #AA00FF;
+    --deep-purple: #6200EA;
+    --indigo: #304FFE;
+    --blue: #2962FF;
+    --light-blue: #0091EA;
+    --cyan: #00B8D4;
+    --teal: #00BFA5;
+    --green: #00C853;
+    --light-green: #64DD17;
+    --lime: #AEEA00;
+    --yellow: #FFD600;
+    --amber: #FFAB00;
+    --orange: #FF6D00;
+    --deep-orange: #DD2C00;
+    --brown: #6D4C41;
+    --gray: #757575;
+    --blue-gray: #546E7A;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+body { min-height: 100dvh; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+input, button, textarea, select{ font: inherit; }
+img, picture, svg, video, canvas{ max-width: 100%; height: auto; display: block; }
+p { text-wrap: pretty }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+a:link, a:visited, a:hover, a:active { text-decoration: none; }
+legend {
+    display: table;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    + * {
+        clear: both;
+    }
+}
+fieldset {
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
+}
+body:not(:-moz-handler-blocked) fieldset { display: table-cell; }
+@media (prefers-reduced-motion: reduce){
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+    background-color: var(--background-default);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+}
+
+.header {
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.header__icon {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px;
+    color: var(--title);
+    border-radius: 50%;
+}
+
+.header__icon:hover {
+    background-color: var(--hover);
+    cursor: pointer;
+}
+
+.header__first-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-right: 25px;
+}
+
+.header__first-block:hover {
+    cursor: pointer;
+}
+
+.header__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.header__logo-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--title);
+}
+
+.header__logo-icon {
+    width: 28px;
+}
+
+.header__search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.header__search-bar-button {
+    padding: 7px 10px;
+    background-color: var(--search-bar);
+    border: none;
+    border-radius: 10px 0 0 10px;
+    color: var(--title);
+    outline: none
+}
+
+.header__search-bar-button svg {
+    min-height: 30px;
+    min-width: 30px;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.header__search-bar-button svg:hover {
+    background-color: var(--hover);
+    cursor: pointer;
+}
+
+.header__search-bar-input {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 10px 10px;
+    background-color: var(--search-bar);
+    border: none;
+    border-radius: 0 10px 10px 0;
+    outline: none
+}
+
+.header__search-bar-input:focus,
+.header__search-bar-input:focus-visible  {
+    background-color: var(--white);
+    
+}
+
+.header__search-bar-input:focus ~ .header__search-bar-button {
+    background-color: var(--white);
+}
+
+
+.header__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px 15px;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 20px;
+    
+}
+
+.contact-list__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.contact-list__title {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.contact-list__header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--divisor);
+}
+
+.contact-list__header, .contact-list__header > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    list-style-type: none;
+    width: 100%;
+    
+}
+
+.contact-list__header li:nth-child(1) {
+    flex-basis: 40%;
+}
+
+.contact-list__header li:nth-child(2) {
+    flex-basis: 30%;
+}
+
+.contact-list__header li:nth-child(3) {
+    flex-basis: 30%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-primary);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact__identity {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 20px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    background-color: var(--blue);
+}
+
+.contact__email {
+    flex-basis: 30%;
+}
+
+.contact__phone {
+    flex-basis: 30%;
+}
+
+.create-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 60px;
+}
+
+.create-contact__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+.create-contact__title {
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.contact-color-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.contact-color-selector__image {
+    width: 100px;
+}
+
+.contact-color-selector__selector {
+    padding: 7px 20px;
+    border-radius: 10px;
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid var(--input);
+}
+
+.create-contact__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.create-contact__form-fieldset {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: var(--title);
+    width: 550px;
+}
+
+.create-contact__form-fieldset-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.create-contact__form-fieldset-fields input {
+    padding: 7px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--input);
+    width: 100%;
+}
+
+.create-contact__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background-color: var(--button);
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    max-width: 300px;
+}
+
+.create-contact__button:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+}
+
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .header__search-bar {
+        display: none;
+    }
+}
